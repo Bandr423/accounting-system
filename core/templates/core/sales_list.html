@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block title %}إدارة المبيعات{% endblock %}
+{% block content %}
+<h1>إدارة المبيعات</h1>
+<a href="{% url 'add_sale' %}" class="btn btn-primary">تسجيل عملية بيع</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>المنتج</th>
+            <th>الكمية</th>
+            <th>سعر البيع</th>
+            <th>التاريخ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.product.name }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>{{ sale.sale_price }}</td>
+            <td>{{ sale.date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

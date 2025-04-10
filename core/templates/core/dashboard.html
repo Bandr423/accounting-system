@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% block title %}لوحة التحكم{% endblock %}
+{% block content %}
+<h1>مرحبًا بك في لوحة التحكم</h1>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">إدارة الفواتير</h5>
+                <p class="card-text">إدارة وإصدار الفواتير والإيصالات.</p>
+                <a href="#" class="btn btn-primary">عرض</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">التقارير المالية</h5>
+                <p class="card-text">عرض وتحليل التقارير المالية.</p>
+                <a href="{% url 'financial_report' %}" class="btn btn-primary">عرض</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">إدارة المخزون</h5>
+                <p class="card-text">إدارة المنتجات والمخزون.</p>
+                <a href="{% url 'product_list' %}" class="btn btn-primary">عرض</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

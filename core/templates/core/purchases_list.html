@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block title %}إدارة المشتريات{% endblock %}
+{% block content %}
+<h1>إدارة المشتريات</h1>
+<a href="{% url 'add_purchase' %}" class="btn btn-primary">تسجيل عملية شراء</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>المنتج</th>
+            <th>الكمية</th>
+            <th>سعر الشراء</th>
+            <th>التاريخ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for purchase in purchases %}
+        <tr>
+            <td>{{ purchase.product.name }}</td>
+            <td>{{ purchase.quantity }}</td>
+            <td>{{ purchase.purchase_price }}</td>
+            <td>{{ purchase.date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

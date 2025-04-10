@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% block title %}تسجيل الدخول{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h2 class="text-center">تسجيل الدخول</h2>
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-block w-100">تسجيل الدخول</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقارير المالية</title>
+</head>
+<body>
+    <h1>التقارير المالية</h1>
+
+    <h2>ملخص:</h2>
+    <p>إجمالي الديون: {{ total_debits }}</p>
+    <p>إجمالي الاعتمادات: {{ total_credits }}</p>
+    <p>الرصيد الإجمالي: {{ total_balance }}</p>
+
+    <h2>تفاصيل الحسابات:</h2>
+    <table border="1">
+        <tr>
+            <th>الاسم</th>
+            <th>النوع</th>
+            <th>الرصيد</th>
+        </tr>
+        {% for account in accounts %}
+        <tr>
+            <td>{{ account.name }}</td>
+            <td>{{ account.get_account_type_display }}</td>
+            <td>{{ account.balance }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
